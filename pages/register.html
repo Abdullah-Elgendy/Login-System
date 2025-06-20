@@ -14,16 +14,23 @@
     <!-- Register Page -->
     <section class="register-form">
         <div class="container">
-            <div class="inner w-75 mx-auto my-5 p-5 d-flex flex-column justify-content-center align-items-center">
-                <h1 class="text-secondary">Smart Login System</h1>
-                <input type="text" class="form-control mt-3 rounded-1 text-white bg-transparent" id="registerName"
+            <div class="inner w-75 mx-auto my-5 p-5">
+                <h1 class="text-secondary text-center">Smart Login System</h1>
+                <input type="text" class="form-control my-3 rounded-1 text-white bg-transparent" id="registerName"
                     placeholder="Enter your name">
-                <input type="email" class="form-control mt-3 rounded-1 text-white bg-transparent" id="registerEmail"
+                <p class="name-error text-danger d-none ms-2 mb-0 text-capitalize">name must be between 3-30 characters
+                    with no special characters except _</p>
+                <input type="email" class="form-control my-3 rounded-1 text-white bg-transparent" id="registerEmail"
                     placeholder="Enter your email">
-                <input type="password" class="form-control my-3 rounded-1 text-white bg-transparent" id="registerPassword"
-                    placeholder="Enter your password">
-                <button class="btn w-100 mt-3 btn-outline-secondary">Sign up</button>
-                <p class="my-sm-3 text-white">Already have an account? <a
+                <p class="email-error text-danger d-none ms-2 mb-0 text-capitalize">email must be a valid email</p>
+                <input type="password" class="form-control my-3 rounded-1 text-white bg-transparent"
+                    id="registerPassword" placeholder="Enter your password">
+                <p class="password-error text-danger d-none ms-2 mb-0 text-capitalize">password must be between 8-30
+                    characters and contain at least one letter and one digit</p>
+                <p class="email-exists text-danger text-center d-none ms-2 mb-0 text-capitalize">email already exists
+                </p>
+                <button id="signUpBtn" class="btn w-100 mt-3 btn-outline-secondary">Sign up</button>
+                <p class="my-3 text-white text-center">Already have an account? <a
                         class="link-light link-offset-2 link-underline link-underline-opacity-0 link-underline-opacity-75-hover"
                         href="./login.html">Sign in</a></p>
             </div>
