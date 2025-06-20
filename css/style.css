@@ -1,0 +1,36 @@
+:root {
+  --bs-primary-rgb: 36, 54, 64;
+  --bs-secondary-rgb: 22, 162, 184;
+}
+
+@font-face {
+  font-family: "TitilliumWeb-Regular";
+  src: url(../fontface/Titillium_Web/TitilliumWeb-Regular.ttf);
+}
+
+* {
+  font-family: "TitilliumWeb-Regular";
+}
+
+.inner {
+  box-shadow: 0px 0px 30px 5px rgba(0, 0, 0, 0.5);
+}
+
+.form-control::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.form-control:focus {
+  box-shadow: none;
+}
+
+.btn-outline-secondary {
+  --bs-btn-color: rgba(var(--bs-secondary-rgb));
+  --bs-btn-border-color: rgba(var(--bs-secondary-rgb));
+  --bs-btn-hover-bg: rgba(var(--bs-secondary-rgb));
+  --bs-btn-hover-border-color: rgba(var(--bs-secondary-rgb));
+}
+
+.navbar {
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.4);
+}

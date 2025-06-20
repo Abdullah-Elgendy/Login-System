@@ -7,10 +7,31 @@
     <link rel="stylesheet" href="css/all.min.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <title>Login System</title>
+    <title>Login</title>
 </head>
 
-<body>
+<body class="bg-primary">
+    <!-- Home Page -->
+    <nav class="navbar fixed-top bg-primary navbar-expand-lg" data-bs-theme="dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">SMART LOGIN</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse flex-grow-0" id="navbarNav">
+                <a href="./pages/login.html" class="btn w-100 btn-outline-warning text-white">Log Out</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="home">
+        <div class="container vh-100 d-flex justify-content-center align-items-center">
+            <div class="inner w-75 m-auto my-5 p-5 text-secondary text-center">
+                <h1 id="userName">Welcome User</h1>
+            </div>
+        </div>
+    </section>
 
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/main.js"></script>
