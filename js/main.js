@@ -24,12 +24,9 @@ if (JSON.parse(sessionStorage.getItem("loginUser"))) {
   //get loginUser from sessionStorage
   loginUser = JSON.parse(sessionStorage.getItem("loginUser"));
 
-  //if path is not index.html and not /
-  if (
-    window.location.pathname != "/index.html" &&
-    window.location.pathname != "/"
-  ) {
-    //open index.html and display the name
+  //if path doesn't include /home.html
+  if (!window.location.pathname.includes("/home.html")) {
+    //redirect to /home.html and display the name
     displayHome();
   } else {
     //if path is already correct then just display the name
@@ -37,13 +34,10 @@ if (JSON.parse(sessionStorage.getItem("loginUser"))) {
   }
   //else if loginUser doesn't exist
 } else {
-  //if path is index.html or /
-  if (
-    window.location.pathname == "/index.html" ||
-    window.location.pathname == "/"
-  )
+  //if path includes /home.html
+  if (window.location.pathname.includes("/home.html"))
     //redirect to login page
-    window.open("./login.html", "_self");
+    window.open("./index.html", "_self");
 }
 
 //accounts array
@@ -172,16 +166,16 @@ function saveToLocalStorage() {
   localStorage.setItem("accounts", JSON.stringify(accounts));
 }
 
-//function to open index.html and display the username in the homepage
+//function to open home.html and display the username in the homepage
 function displayHome() {
-  window.open("./index.html", "_self");
+  window.open("./home.html", "_self");
   userName.innerHTML = `Welcome ${loginUser.name}`;
 }
 
 //function to log out user
 function logOutAccount() {
   sessionStorage.removeItem("loginUser");
-  window.open("./login.html", "_self");
+  window.open("./index.html", "_self");
 }
 
 //======== Event Listeners ========
@@ -191,7 +185,7 @@ if (signUpBtn != null) {
   signUpBtn.addEventListener("click", function () {
     if (validName() && validEmail() && validPassword()) {
       addAccount();
-      window.open("./login.html", "_self");
+      window.open("./index.html", "_self");
     }
   });
 }
@@ -203,15 +197,15 @@ if (loginBtn != null) {
       document
         .querySelector(".invalid-login")
         .classList.replace("d-block", "d-none");
-        loginEmail.classList.remove("is-invalid");
-        loginPassword.classList.remove("is-invalid");
+      loginEmail.classList.remove("is-invalid");
+      loginPassword.classList.remove("is-invalid");
       displayHome();
     } else {
       document
         .querySelector(".invalid-login")
         .classList.replace("d-none", "d-block");
-        loginEmail.classList.add("is-invalid");
-        loginPassword.classList.add("is-invalid");
+      loginEmail.classList.add("is-invalid");
+      loginPassword.classList.add("is-invalid");
     }
   });
 }
